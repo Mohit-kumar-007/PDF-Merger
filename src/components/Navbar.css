@@ -1,0 +1,154 @@
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #1a73e8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+}
+
+.navbar-logo svg {
+  width: 28px;
+  height: 28px;
+}
+
+.navbar-logo:hover {
+  transform: translateY(-1px);
+  color: #1557b0;
+}
+
+.navbar-logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.navbar-auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Clerk button customization */
+.cl-rootBox button {
+  font-weight: 500 !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+}
+
+.cl-rootBox button:first-child {
+  background-color: #1a73e8 !important;
+  color: white !important;
+}
+
+.cl-rootBox button:first-child:hover {
+  background-color: #1557b0 !important;
+}
+
+.cl-rootBox button:last-child {
+  color: #1a73e8 !important;
+  border: 1px solid #1a73e8 !important;
+}
+
+.cl-rootBox button:last-child:hover {
+  background-color: #f8f9fa !important;
+  border-color: #1557b0 !important;
+  color: #1557b0 !important;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #4a5568;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #f7fafc;
+  color: #1a73e8;
+}
+
+.dark .navbar {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.dark .navbar-logo {
+  color: #1a73e8;
+}
+
+.dark .theme-toggle {
+  color: #e2e8f0;
+}
+
+.dark .theme-toggle:hover {
+  background-color: #2d2d2d;
+  color: #60a5fa;
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .navbar-container {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .navbar-logo {
+    margin-left: 0.5rem;
+  }
+
+  .navbar-auth {
+    margin-right: 0.5rem;
+  }
+
+  .navbar-logo-text {
+    font-size: 1.25rem;
+  }
+
+  .navbar-logo svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cl-rootBox button {
+    padding: 0.5rem 1rem !important;
+  }
+}

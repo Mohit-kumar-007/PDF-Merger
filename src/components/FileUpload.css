@@ -1,0 +1,260 @@
+.file-upload {
+  padding: 2rem;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  margin: 2rem auto;
+  max-width: 800px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.upload-area {
+  border: 2px dashed var(--accent-color);
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+  background-color: var(--bg-secondary);
+}
+
+.upload-area.drag-over {
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-hover);
+}
+
+.upload-icon {
+  margin-bottom: 1rem;
+}
+
+.upload-area h2 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.upload-area p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-list-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.file-list-header h3 {
+  color: #2d3748;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.reorder-hint {
+  color: #718096;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 50px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  transition: all 0.3s ease;
+}
+
+.file-list.dragging-over {
+  border: 2px dashed var(--accent-color);
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  position: relative;
+  user-select: none;
+}
+
+.file-item:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.file-item.dragging {
+  background: var(--bg-secondary);
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.file-item-drag {
+  cursor: grab;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.file-item-drag:hover {
+  background: #f1f5f9;
+}
+
+.file-item-drag:active {
+  cursor: grabbing;
+  background: #e2e8f0;
+}
+
+.file-item-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.file-item-name {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.file-item-actions {
+  display: flex;
+  align-items: center;
+}
+
+.file-item-remove {
+  background: none;
+  border: none;
+  color: #e53e3e;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.dark .file-item-remove {
+  color: #fc8181;
+}
+
+.file-item-remove:hover {
+  background-color: #fed7d7;
+}
+
+.dark .file-item-remove:hover {
+  background-color: #742a2a;
+}
+
+.merge-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.merge-button:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+}
+
+.merge-button:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.dark .loading-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1a73e8;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+/* Animation for loading spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Drag and drop styles */
+.file-item.dragging {
+  background: #e8f0fe;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .file-upload {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .file-list-header {
+    text-align: left;
+  }
+
+  .file-item {
+    flex-wrap: wrap;
+  }
+
+  .file-item-actions {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+}
